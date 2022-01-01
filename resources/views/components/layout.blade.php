@@ -10,7 +10,7 @@
     <nav class="md:flex md:justify-between md:items-center">
         <div>
             <a href="/">
-                <img src="./images/logo.svg" alt="Laracasts Logo" width="165" height="16">
+                <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
             </a>
         </div>
 
@@ -134,7 +134,7 @@
 
                     <footer class="flex justify-between items-center mt-8">
                         <div class="flex items-center text-sm">
-                            <img src="./images/lary-avatar.svg" alt="Lary avatar">
+                            <img src="/images/lary-avatar.svg" alt="Lary avatar">
                             <div class="ml-3">
                                 <h5 class="font-bold">Lary Laracore</h5>
                                 <h6>Mascot at Laracasts</h6>
