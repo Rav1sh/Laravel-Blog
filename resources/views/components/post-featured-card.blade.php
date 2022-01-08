@@ -23,16 +23,14 @@
                     </h1>
 
                     <span class="mt-2 block text-gray-400 text-xs">
-                                        Published <time>1 day ago</time>
+                                        Published <time>{{ $post->created_at->diffForHumans() }}</time>
                                     </span>
                 </div>
             </header>
 
             <div class="text-sm mt-2">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Published <time>{{ $post->excerpt }}</time>
                 </p>
 
                 <p class="mt-4">
