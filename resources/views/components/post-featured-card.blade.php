@@ -32,10 +32,6 @@
                 <p>
                     Published <time>{{ $post->excerpt }}</time>
                 </p>
-
-                <p class="mt-4">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
             </div>
 
             <footer class="flex justify-between items-center mt-8">
