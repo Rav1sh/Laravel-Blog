@@ -32,7 +32,7 @@
 
             <div class="text-sm mt-2">
                 <p>
-                    Published <time>{{ $post->excerpt }}</time>
+                    {!! $post->excerpt !!}
                 </p>
             </div>
 
