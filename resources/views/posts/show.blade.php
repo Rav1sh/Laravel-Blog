@@ -1,5 +1,4 @@
 <x-layout>
-
     <section class="px-6 py-8">
 
         <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
@@ -42,9 +41,7 @@
                         </a>
 
                         <div class="space-x-2">
-                            <a href="{{ $post->category->slug }}"
-                               class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 text-xs uppercase font-semibold"
-                               style="font-size: 10px">{{ $post->category->name }}</a>
+                            <x-category-button :category="$post->category" />
                         </div>
                     </div>
 
@@ -53,36 +50,34 @@
                     </h1>
 
                     <div class="space-y-4 lg:text-lg leading-loose">
-                        {!! $post->body !!}
+                       {!! $post->body !!}
                     </div>
                 </div>
 
-{{--                <section class="col-span-8 col-start-5 mt-10 space-y-6">--}}
+                <section class="col-span-8 col-start-5 mt-10 space-y-6">
 
-{{--                    @include('posts._add-comment-form')--}}
+                    @include('posts._add-comment-form')
 
-{{--                    @foreach($post->comments as $comment)--}}
-{{--                        <x-post-comment :comment="$comment" />--}}
-{{--                    @endforeach--}}
-{{--                </section>--}}
+                    @foreach($post->comments as $comment)
+                    <x-post-comment :comment="$comment" />
+                    @endforeach
+                </section>
             </article>
         </main>
     </section>
-
-
-
-{{--        <article>--}}
-{{--            <h1>--}}
-{{--                {{ $post->title }}--}}
-{{--            </h1>--}}
-
-{{--            <p> Author: <a href="/authors/{{ $post->author->name }}">{{ $post->author->name }}</a> </p>--}}
-{{--            <p> Category: <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a> </p>--}}
-
-{{--            <div>--}}
-{{--                {{ $post->body }}--}}
-{{--            </div>--}}
-{{--        </article>--}}
-
-{{--    <a href="/">back</a>--}}
 </x-layout>
+
+
+{{--@extends('layout')--}}
+
+{{--@section ('content')--}}
+{{--    <article>--}}
+{{--        <h1>{{ $post->title }}</h1>--}}
+
+{{--        <div>{{ $post->body }}</div>--}}
+{{--    </article>--}}
+
+{{--    <a href="/">Go back</a>--}}
+{{--@endsection--}}
+
+

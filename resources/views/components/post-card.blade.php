@@ -10,9 +10,7 @@
         <div class="mt-8 flex flex-col justify-between">
             <header>
                 <div class="space-x-2">
-                    <a href="{{ $post->category->slug }}"
-                       class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 text-xs uppercase font-semibold"
-                       style="font-size: 10px">{{ $post->category->name }}</a>
+                    <x-category-button :category="$post->category" />
                 </div>
 
                 <div class="mt-4">
@@ -29,7 +27,7 @@
             </header>
 
             <div class="text-sm mt-4">
-                {!! $post->excerpt !!}
+                    {!! $post->excerpt !!}
             </div>
 
             <footer class="flex justify-between items-center mt-8">
@@ -38,7 +36,7 @@
                     <div class="ml-3">
                         <h5 class="font-bold">
                             <a href="/?author={{ $post->author->username }}">
-                                {{ $post->author->name }}
+                            {{ $post->author->name }}
                             </a>
                         </h5>
                         <h6>Mascot at Laracasts</h6>
