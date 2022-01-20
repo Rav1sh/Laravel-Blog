@@ -5,8 +5,9 @@
 
             <x-form.input name="title"/>
             <x-form.input name="slug"/>
-            <x-form.textarea name="excerpt"/>
-            <x-form.textarea name="body"/>
+            <x-form.input name="excerpt"/>
+            <x-form.input name="body"/>
+
 
             {{-- Category --}}
             <div class="mb-6">

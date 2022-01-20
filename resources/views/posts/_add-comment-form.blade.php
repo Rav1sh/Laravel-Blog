@@ -1,5 +1,7 @@
 @auth
+    @if($count >= 5)
     <x-panel>
+
         <form method="POST" action="/posts/{{ $post->slug }}/comments">
             @csrf
 
@@ -21,6 +23,12 @@
             </div>
         </form>
     </x-panel>
+    @else
+        <p class="text-red-500 text-cs mt-2">
+            You need at least 5 posts to post a comment
+        </p>
+
+    @endif
 
 @else
     <p>
