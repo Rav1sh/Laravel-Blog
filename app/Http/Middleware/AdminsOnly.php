@@ -21,7 +21,7 @@ class AdminsOnly
             abort(403);
         }
 
-        if (auth()->user()->username !== '123')
+        if (auth()->user()->admin === 0)
         {
             abort(403);
         }
