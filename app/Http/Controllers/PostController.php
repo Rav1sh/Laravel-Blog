@@ -12,8 +12,11 @@ class PostController extends Controller
     public function index()
     {
         return view('posts.index', [
-            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->get(),
+            'posts' => Post::latest()->Where('active', 1)->filter(request(['search', 'category', 'author']))->get(),
+
             'count' => Post::where('user_id', auth()->id())->count()
+
+
         ]);
     }
 
@@ -23,5 +26,16 @@ class PostController extends Controller
             'post' => $post,
             'count' => Post::where('user_id', auth()->id())->count()
         ]);
+    }
+
+    public function active(Post $post){
+        if ($post->active){
+            Post::where('id',$post['id'])->update(['active' => false]);
+
+        }
+        else{
+            Post::where('id',$post['id'])->update(['active' => true]);
+        }
+        return back();
     }
 }

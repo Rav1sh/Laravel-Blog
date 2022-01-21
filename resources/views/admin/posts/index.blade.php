@@ -23,6 +23,22 @@
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-nowrap">
+                                    <form method="POST" action="/forum/posts/{{$post->id}}/active"
+                                          class="max-w-sm mx-auto" enctype="multipart/form-data">
+                                        @csrf
+                                        @method('PATCH')
+                                        @if($post->active)
+
+                                            <button type="submit" class="bg-green-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 mt-3">Active</button>
+                                    </form>
+                                    @endif
+                                    @if(! $post->active)
+
+                                        <button type="submit" class="bg-red-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 mt-3">Not Active</button>
+                                        </form>
+                                @endif
+
+                                <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                   {{ $post->created_at->diffForHumans() }}
                 </span>

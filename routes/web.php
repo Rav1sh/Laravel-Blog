@@ -6,10 +6,12 @@ use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\updateProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +45,14 @@ Route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->midd
 
 Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin');
 
+
+Route::get('profile/{id}',[ProfileController::class, 'index'])->middleware('auth');
+Route::patch('profile/update',[ProfileController::class, 'update'])->middleware('auth');
+
+Route::patch('forum/posts/{post:id}/active', [PostController::class, 'active'])->middleware('admin');
 //Route::get('/profile', [ProfileController::class, 'edit'])->middleware('admin');
 
-Route::get('users/profile', [ProfileController::class, 'edit'])->name('profile');
+//Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile');
+//
+////Route::get('profile/{id}',[ProfileController::class, 'index'])->middleware('auth');
+//Route::patch('profile/update',[ProfileController::class, 'update'])->middleware('auth');

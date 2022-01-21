@@ -24,12 +24,13 @@
                         </button>
                     </x-slot>
 
-                    <x-dropdown-item
-                        href="users/profile"
-                        :active="request()->is('admin/posts')"
-                    >
-                        Profile
-                    </x-dropdown-item>
+                    <form method="get" action="/profile/{{auth()->id()}}">
+                        <input type="hidden" value="{{auth()->id()}}" name="id" id="id">
+                        @csrf
+                        <button type="submit" class="text-xs font-bold uppercase py-3 px-3">
+                            {{auth()->user()->username}}</button>
+
+                    </form>
 
                     <x-dropdown-item
                         href="/admin/posts"
