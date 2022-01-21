@@ -44,10 +44,3 @@ class Post extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 }
-
-//    public function user(){ // foreign key user_id
-//        return $this->belongsTo(User::class);
-//    }
-//}
-
-//    protected $fillable = ['title', 'excerpt', 'body', 'category_id'];

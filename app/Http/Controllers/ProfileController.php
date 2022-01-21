@@ -12,27 +12,21 @@ class ProfileController extends Controller
 {
     public function index(){
         if (auth()->id() != implode(\request(['id']))) {
-
+            //Has no permissions
             abort(403);
         }
-
         return view('profile');
     }
 
-
+    // Update profile
     public function update(){
-
-
         $attributes = \request()->validate([
-            "name" => 'required',
             "username" => 'required',
-            "email" => 'required',
+            "name" => 'required',
+            "email" => 'required'
         ]);
         User::where('id', auth()->id())->update($attributes);
 
-
-        return redirect('/')->with('succes', 'Account updated');
-
+        return redirect('/');
     }
-
 }

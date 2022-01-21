@@ -22,9 +22,6 @@ class AdminPostController extends Controller
 
     public function store()
     {
-//        $path = request()->file('thumbnail')->store('\public/thumbnails');
-//
-//        return 'Done: ' . $path;
 
         $attributes = request()->validate([
             'title' => 'required',
@@ -40,7 +37,6 @@ class AdminPostController extends Controller
 
         return redirect('/');
 
-//        return back()->with('success', 'Post Created!');
     }
 
     public function edit(Post $post)

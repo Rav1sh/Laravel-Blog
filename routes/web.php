@@ -35,8 +35,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin');
-Route::post('admin/posts', [AdminPostController::class, 'store'])->middleware('admin');
+Route::get('admin/posts/create', [AdminPostController::class, 'create'])->middleware('auth');
+Route::post('admin/posts', [AdminPostController::class, 'store'])->middleware('auth');
 
 Route::get('admin/posts', [AdminPostController::class, 'index'])->middleware('admin');
 

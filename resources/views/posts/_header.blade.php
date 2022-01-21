@@ -1,6 +1,6 @@
 <header class="max-w-xl mx-auto mt-20 text-center">
     <h1 class="text-4xl">
-        Latest <span class="text-blue-500">Laravel From Scratch</span> News
+        Post <span class="text-blue-500">Your Gaming</span> Blogs
     </h1>
 
 
@@ -39,7 +39,7 @@
                     <input type="hidden" name="category" value="{{ request('category') }}">
                 @endif
 
-                <input type="text" name="search" placeholder="Find something"
+                <input type="text" name="search" placeholder="Search"
                        class="bg-transparent placeholder-black font-semibold text-sm"
                         value="{{ request('search') }}">
             </form>

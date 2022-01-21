@@ -6,8 +6,8 @@
 
             <x-form.input name="title" :value="old('title', $post->title)"/>
             <x-form.input name="slug" :value="old('slug', $post->slug)"/>
-            <x-form.textarea name="excerpt">{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
-            <x-form.textarea name="body">{{ old('body', $post->body) }}</x-form.textarea>
+            <x-form.input name="excerpt" :value="old('excerpt', $post->excerpt)"/>
+            <x-form.input name="body" :value="old('body', $post->body)"/>
 
             {{-- Category --}}
             <div class="mb-6">

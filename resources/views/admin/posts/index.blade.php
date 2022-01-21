@@ -29,12 +29,12 @@
                                         @method('PATCH')
                                         @if($post->active)
 
-                                            <button type="submit" class="bg-green-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 mt-3">Active</button>
+                                            <button type="submit" class="bg-green-600 rounded-xl text-xs font-semibold text-white uppercase py-3 px-5 mt-3">Active</button>
                                     </form>
                                     @endif
                                     @if(! $post->active)
 
-                                        <button type="submit" class="bg-red-500 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 mt-3">Not Active</button>
+                                        <button type="submit" class="bg-red-600 rounded-xl text-xs font-semibold text-white uppercase py-3 px-5 mt-3">Not Active</button>
                                         </form>
                                 @endif
 
